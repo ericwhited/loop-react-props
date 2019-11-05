@@ -19,22 +19,33 @@ const Avatar = styled.img`
     width: 75px;
     border-radius: 100%;
     margin: 0 auto 20px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
 `
 
 const Button = styled.div`
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
+    color: #fff;
+    background-color: #ed3330;
     border-radius: 5px;
     display: inline-block;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     text-align: left;
     margin: 2rem 0;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+`
+
+const Heading = styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
 `
 
 const NameCard = props => (
     <StyledNameCard>
         <Avatar src={props.avatar} />
-        <div>{props.name}</div>
+        <Heading>{props.name}</Heading>
         <div>{props.title}</div>
         <Button onClick={() => props.buttonHandler(props)}>Click Me</Button>
     </StyledNameCard>
