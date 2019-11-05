@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import NameCard from './NameCard'
 import './App.css';
+
+const NameTag = props => (
+  // <p>Hello, my name is Eric</p>
+  <p>Hello, my name is {props.name}</p>
+) 
+
+const buttonHandler = (props) => {
+  alert(`Hello, my name is ${props.name} and my title is ${props.title}`)
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{display: "flex", justifyContent: "center"}} className="App">
+      {/*<NameTag name="Zenders" />
+      <NameTag name="D2" />
+  <NameTag name="Zenders" />*/}
+    <NameCard name="Brian Antczak" title="Head Princess" buttonHandler={(props) => buttonHandler(props)} />
+    <NameCard name="Eric Whited" title="Developer" />
     </div>
   );
 }
